@@ -1,0 +1,15 @@
+.slider {
+   // .slider__wrapper
+   &__wrapper {
+      display: flex;
+      gap: 20px;
+   }
+   // .slider__slide
+   &__slide {
+      background-color: grey;
+      color: $dark;
+      padding: 30px;
+      text-align: center;
+      width: 100%;
+   }
+}

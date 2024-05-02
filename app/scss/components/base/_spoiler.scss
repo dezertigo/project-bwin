@@ -1,0 +1,85 @@
+.spoiler {
+   width: auto;
+   color: $dark;
+   border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+   padding-bottom: 28px;
+   &__preview {
+      cursor: pointer; // ! Либо писать в стилях - либо есть готовая функция в джсе (но лучше стилях)
+      padding-top: 0px;
+      padding-bottom: 0px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+   }
+   &__title {
+      width: 100%;
+      font-weight: 600;
+      @include fl(16,19);
+      @media (min-width: 768px) {
+         @include fl(18,22);
+      }
+      @media (min-width: 1250px) {
+         @include fl(20,24);
+      }
+   }
+   &__icon {
+      transition: all 0.3s ease;
+   }
+   &__wrapper {
+      height: 0; // ! Либо писать в стилях - либо есть готовая функция в джсе (но лучше стилях)
+      overflow: hidden; // ! Либо писать в стилях - либо есть готовая функция в джсе (но лучше стилях)
+      transition: all 0.5s ease; // ! Либо писать в стилях - либо есть готовая функция в джсе (но лучше стилях)
+   }
+   &__body {
+      padding-top: 10px;
+      padding-bottom: 0px;
+   }
+   &.opened {
+      .spoiler {
+         &__icon {
+            transform: rotate(45deg);
+         }
+      }
+   }
+}
+
+
+
+//  spoiler 13/07/2023
+
+// .spoiler {
+//    &__inner {
+//       padding-bottom: 8px;
+//       border-bottom: 1px solid #b8b4bb;
+//       margin-bottom: 30px;
+//       &.opened {
+//          .spoiler__icon {
+//             transform: rotate(135deg);
+//          }
+//      }
+//    }
+//    &__preview {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       cursor: pointer;
+//       gap: 15px;
+//    }
+//    &__title {
+//       font-weight:700;
+//    }
+//    &__icon {
+//       flex-shrink: 0;
+//       transition: all .5s ease;
+//    }
+//    &__wrapper {
+//       height: 0;
+//       overflow: hidden;
+//       transition: all .5s ease;
+//    }
+//    &__body {
+//       padding: 10px 0 2px;
+//    }
+// }

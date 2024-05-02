@@ -1,0 +1,47 @@
+%container {
+   padding-left: percent(16, 376);
+   padding-right: percent(16, 376);
+   @media (min-width: 769px) {
+      padding-left: percent(20, 769);
+      padding-right: percent(20, 769);
+   }
+   @media (min-width: 1200px) {
+      padding-left: percent(30, 1240);
+      padding-right: percent(30, 1240);
+   }
+   @media (min-width: 1500px) {
+      padding-left: percent(40, 1920);
+      padding-right: percent(40, 1920);
+   }
+}
+
+%btn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: all .5s ease;
+}
+
+%sec-title {
+   @include fl(28,34);
+   font-weight: 800;
+   @media (min-width: 769px) {
+      @include fl(40,48);
+   }
+   @media (min-width: 1400px) {
+      @include fl(48, 58);
+   }
+}
+
+%sec-text {
+   color: $gray;
+   @include fl(15,24);
+   @media(min-width: 769px) {
+      @include fl(16,26);
+      width: 100%;
+   }
+}
+
+

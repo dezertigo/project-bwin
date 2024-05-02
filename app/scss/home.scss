@@ -1,0 +1,23 @@
+// Подлкючение базовых стилей
+@import "./default/variables";
+@import "./default/null";
+@import "./default/mixins";
+@import "./default/function";
+@import "./default/patterns";
+@import "./default/fonts";
+@import "./default/global";
+@import "./default/text";
+
+// Header / Footer
+// @import "./components/structure/header";
+// @import "./components/structure/footer";
+
+// Подключение стилей компонентов
+// @import "./components/base/btn";
+// @import "./components/base/spoiler";
+// @import "./components/base/pop-up";
+// @import "./components/base/pop-up-video";
+// @import "./components/base/slider";
+
+//Подключение стилей конкретной страницы
+@import "./pages/home";

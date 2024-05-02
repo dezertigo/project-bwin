@@ -1,0 +1,12 @@
+@function em($px: 16) {
+   $result: calc(($px / 16) * 1em);
+   @return $result;
+}
+@function rem($px: 16) {
+   $result: calc(($px / 16) * 1rem);
+   @return $result;
+}
+@function percent($elementWidth, $containerWidth) {
+   $result: calc($elementWidth / $containerWidth * 100%);
+   @return $result;
+}

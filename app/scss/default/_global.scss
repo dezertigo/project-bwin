@@ -1,0 +1,12 @@
+body {
+   font-family: $ff1;
+   @include fl(16);
+   color: $dark;
+   background-color: #FFF;
+}
+
+.container {
+   max-width: 1360px;
+   padding: 0 20px;
+   margin: 0 auto;
+}

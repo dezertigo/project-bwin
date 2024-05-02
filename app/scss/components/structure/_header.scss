@@ -1,0 +1,327 @@
+.header {
+   background-color: $light;
+   position: fixed;
+   width: 100%;
+   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+   opacity: 1;
+   transition: opacity 0.3s ease 0s;
+   &:hover {
+      opacity: 1 !important;
+   }
+   &:before {
+      // Накрывает менюшки с position: fixed
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent; // todo Изменить на нужный цвет подложки
+      z-index: 1;
+   }
+   &__container {
+      @extend %container;
+   }
+   &__body {
+      min-height: 66px; // todo Указываем минимальную высоту шапки
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // todo Позиционируем элементы по оси Х
+      column-gap: 20px;
+      @media (min-width:600px) {
+         min-height: 80px;
+      }
+   }
+   &__logo {
+      z-index: 2;
+      @include fl(30);
+      transition: all 0.3s ease;
+      img {
+         max-width: 168px;
+         @media (min-width:600px) {
+            max-width: 200px;
+         }
+      }
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+   &__btn {
+      @extend %btn;
+      @include fl(18,27);
+      font-weight: 700;
+      color: $light;
+      background: $blue;
+      padding: 20px 0;
+      &:hover {
+         background-color: #4d6aff;
+      }
+      @media (min-width: 600px) {
+         display: none;
+      }
+   }
+   &__controls {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+   }
+   &__controls-btn {
+      @extend %btn;
+      display: none;
+      @media (min-width: 600px) {
+         display: flex;
+         @include fl(14, 18);
+         color: #333;
+         padding: 13px 0;
+         width: 160px;
+         border: 1px solid $dark;
+         z-index: 2;
+         &:hover {
+            color: #fff;
+            background-color: $blue;
+         }
+      }
+   }
+
+}
+
+.header-action {
+   display: block;
+   margin-bottom: 48px;
+   @media (min-width: 993px) {
+      flex: 1 1 auto; //Растягиваем на всю возможную ширину
+      margin-bottom: 0;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // Раздвигаем элементы меню между собой для резинового увеличения отступа
+      column-gap: 15px; // минимальный отступ между элементами меню
+   }
+   &__body {
+      @extend %container;
+      position: fixed;
+      height: calc(100% - 66px);
+      top: 66px;
+      left: 0;
+      max-width: 100%;
+      width: 100%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background-color: $light;
+      transition: all .5s ease;
+      transform: translateY(-200%);
+      z-index: 2;
+      &.active {
+         transform: translateY(0%);
+         overflow: auto;
+         box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+      }
+      @media (min-width: 600px) {
+         top: 80px;
+      }
+      @media (min-width: 993px) {
+         transform: translateY(0);
+         position: static;
+         max-width: 450px;
+         width: 100%;
+         padding-inline: 0 !important;
+      }
+      @media (min-width: 1200px) {
+         max-width: 600px;
+      }
+      
+   }
+   // flex: 1 1 auto; //Растягиваем на всю возможную ширину
+   // max-width: 344px; // Задаем максимальную ширину (брать ширину меню из макета)
+   // position: relative;
+   // z-index: 2;
+   // display: flex;
+   // align-items: center;
+   // justify-content: space-between; // Раздвигаем элементы меню между собой для резинового увеличения отступа
+   // column-gap: 15px; // минимальный отступ между элементами меню
+   li {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      @include fl(24,38);
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+      margin-top: 48px;
+      padding-bottom: 0;
+      @media (min-width: 993px) {
+         @include fl(16,26);
+         margin-top: 0;
+         border-bottom: none;
+      }
+      &:hover {
+         @media (min-width: 769px) {
+            a {
+               &:after {
+                  width: 100%;
+               }
+            }
+         }
+      }
+      a {
+         padding-top: 5px;
+         padding-bottom: 5px;
+         @media (min-width: 769px) {
+            display: block;
+            position: relative;
+            &:after {
+               content: "";
+               position: absolute;
+               bottom: 5px;
+               left: 0;
+               width: 0;
+               height: 1px;
+               background: $dark;
+               transition: all 0.3s ease;
+            }
+         }
+      }
+   }
+}
+
+.burger {
+   position: relative;
+   z-index: 2;
+   min-height: 30px; // Высота блока для удобства нажатия на иконку
+   width: 30px; // Ширина блока для удобства нажатия на иконку
+   // ? Двигаем на половину от разницы между width для .burger и width для .burger__wrapper что бы .burger прилип к контейнеру
+   // margin-left: -9px;
+   // ? Двигаем на половину от разницы между width для .burger и width для .burger__wrapper что бы .burger прилип к контейнеру
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease;
+   cursor: pointer;
+   &:hover {
+      transform: scale(1.2);
+   }
+   @media (min-width: 993px) {
+      display: none;
+   }
+   // todo Если нужно изменить цвет бургера при наведении
+   /* 
+   &:hover .burger__wrapper {
+      span,
+      &:before,
+      &:after {
+         background-color: orange; 
+      }
+   }
+	*/
+   &__wrapper {
+      width: 22px; // todo Макетная ширина бургера
+      height: 18px; // todo Макетная высота бургера
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      span,
+      &:before,
+      &:after {
+         width: 100%;
+         height: 2px;
+         background-color: #000;
+         transition: all 0.3s ease;
+         transform: translateY(0);
+         position: relative;
+         left: 0;
+      }
+      &:before {
+         content: "";
+         animation: burgerTopDisabled 0.7s ease 0s 1;
+         animation-fill-mode: forwards;
+      }
+      &:after {
+         content: "";
+         animation: burgerBottomDisabled 0.7s ease 0s 1;
+         animation-fill-mode: forwards;
+      }
+      span {
+         top: 50%;
+         transform: translateY(-150%);
+         // transition: background-color 0.3s ease, transform 0.3s ease 0.35s; //! Interesting effect (on desktop)
+         transition: background-color 0.3s ease, transform 0.3s ease 0s;
+      }
+
+      @keyframes burgerTopDisabled {
+         // Closing burger animation
+         0% {
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+         }
+         50% {
+            top: 50%;
+            transform: translateY(-50%);
+         }
+         100% {
+            top: 0;
+            transform: translateY(0);
+         }
+      }
+      @keyframes burgerBottomDisabled {
+         // Closing burger animation
+         0% {
+            top: 50%;
+            transform: translateY(-250%) rotate(45deg);
+         }
+         50% {
+            top: 50%;
+            transform: translateY(-250%);
+         }
+         100% {
+            top: 100%;
+            transform: translateY(-300%);
+         }
+      }
+   }
+   &.active {
+      // Opening burger animation
+      .burger__wrapper {
+         &:before {
+            animation: burgerTopActive 0.7s ease 0s 1;
+            animation-fill-mode: forwards;
+         }
+         span {
+            transform: translateY(-150%) scale(0);
+            // transition: background-color 0.3s ease, transform 0.3s ease 0s; //! Interesting effect (on desktop)
+            transition: background-color 0.3s ease, transform 0.3s ease 0.3s;
+         }
+         &:after {
+            animation: burgerBottomActive 0.7s ease 0s 1;
+            animation-fill-mode: forwards;
+         }
+         @keyframes burgerTopActive {
+            0% {
+               top: 0;
+               transform: translateY(0);
+            }
+            50% {
+               top: 50%;
+               transform: translateY(-50%);
+            }
+            100% {
+               top: 50%;
+               transform: translateY(-50%) rotate(-45deg);
+            }
+         }
+         @keyframes burgerBottomActive {
+            0% {
+               top: 100%;
+               transform: translateY(-300%);
+            }
+            50% {
+               top: 50%;
+               transform: translateY(-250%);
+            }
+            100% {
+               top: 50%;
+               transform: translateY(-250%) rotate(45deg);
+            }
+         }
+      }
+   }
+}

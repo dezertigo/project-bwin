@@ -1,0 +1,19 @@
+// Подлкючение базовых стилей
+@import "./default/variables";
+@import "./default/null";
+@import "./default/mixins";
+@import "./default/function";
+@import "./default/patterns";
+@import "./default/fonts";
+@import "./default/global";
+@import "./default/text";
+
+// Header / Footer
+@import "./components/structure/header";
+@import "./components/structure/footer";
+
+// Подключение стилей компонентов
+
+//Подключение стилей конкретной страницы
+// ! Переменовать текущий файл и файл подлючающий стили страницы ниже(start) в нужное имя (имеется ввиду файл который нужно создать в папке app/scss/pages), после чего удалить эту строку
+@import "./pages/start";

@@ -1,0 +1,80 @@
+@mixin typographic($c, $fz, $lh, $ls, $ff, $fw, $op: 1) {
+   color: $c;
+   font-size: calc($fz / 16 * 1rem);
+   line-height: $lh/$fz;
+   letter-spacing: $ls;
+   font-family: $ff;
+   font-weight: $fw;
+   opacity: $op;
+}
+
+@mixin fz($fz: 16) {
+   font-size: calc($fz / 16 * 1rem);
+}
+
+@mixin lh($lh: 24, $fz: 16) {
+   line-height: calc($lh/$fz);
+}
+
+@mixin fl($fz: 16, $lh: $fz * 1.25) {
+   font-size: calc($fz / 16 * 1rem);
+   line-height: calc($lh/$fz);
+}
+
+@mixin ff($family, $weight, $src: $family) {
+   @font-face {
+      font-family: "#{$family}";
+      font-display: swap;
+      src: url("../fonts/#{$src}-#{$weight}.woff") format("woff"),
+         url("../fonts/#{$src}-#{$weight}.woff-2") format("woff-2");
+      @if ($weight == "Thin") {
+         font-weight: 100;
+      } @else if($weight == "ExtraLight") {
+         font-weight: 200;
+      } @else if($weight == "Light") {
+         font-weight: 300;
+      } @else if($weight == "Regular") {
+         font-weight: 400;
+      } @else if($weight == "Medium") {
+         font-weight: 500;
+      } @else if($weight == "SemiBold") {
+         font-weight: 600;
+      } @else if($weight == "Bold") {
+         font-weight: 700;
+      } @else if($weight == "ExtraBold") {
+         font-weight: 800;
+      } @else if($weight == "Black") {
+         font-weight: 900;
+      }
+      font-style: normal;
+   }
+}
+@mixin ffs($family, $weight, $src: $family, $style: normal) {
+   @font-face {
+      font-family: "#{$family}";
+      font-display: swap;
+      src: url("../fonts/#{$src}-#{$weight}.woff") format("woff"),
+         url("../fonts/#{$src}-#{$weight}.woff-2") format("woff-2");
+      font-weight: "#{$weight}";
+      @if ($weight == "Thin") {
+         font-weight: 100;
+      } @else if($weight == "ExtraLight") {
+         font-weight: 200;
+      } @else if($weight == "Light") {
+         font-weight: 300;
+      } @else if($weight == "Regular") {
+         font-weight: 400;
+      } @else if($weight == "Medium") {
+         font-weight: 500;
+      } @else if($weight == "SemiBold") {
+         font-weight: 600;
+      } @else if($weight == "Bold") {
+         font-weight: 700;
+      } @else if($weight == "ExtraBold") {
+         font-weight: 800;
+      } @else if($weight == "Black") {
+         font-weight: 900;
+      }
+      font-style: "#{$style}";
+   }
+}

@@ -1,0 +1,84 @@
+.pop-up {
+   &.active {
+      z-index: 20;
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity 0.5s ease 0s, z-index 0s ease 0s;
+   }
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.9);
+   width: 100vw;
+   height: 100vh;
+   z-index: 0;
+   pointer-events: none;
+   opacity: 0;
+   transition: opacity 0.5s ease 0s, z-index 0s ease 0.5s;
+
+   // pop-up__wrapper
+   &__wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px; // ! отступы от краев экрана
+      overflow-y: auto;
+   }
+
+   // pop-up__body
+   &__body {
+      // max-height: 100%; // ! Если надо что бы поп ап не выходил за рамки wrapper'а
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #fff;
+      padding: 30px;
+      position: relative;
+   }
+
+   // pop-up__close-icon-wrapper
+   &__close-icon-wrapper {
+      position: absolute;
+      z-index: 1;
+      top: 5px;
+      right: 5px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transform: translate(8px, -8px);
+      transition: transform 0.3s ease;
+      &:hover {
+         transform: translate(8px, -8px) scale(1.35);
+      }
+   }
+   // pop-up__close-icon
+   &__close-icon {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      &:after,
+      &:before {
+         content: "";
+         display: inline-block;
+         width: 100%;
+         height: 2px;
+         background-color: #000;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         border-radius: 1px;
+      }
+      &:after {
+         transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:before {
+         transform: translate(-50%, -50%) rotate(-45deg);
+      }
+   }
+}
