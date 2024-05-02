@@ -141,22 +141,6 @@ input[type=submit],
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Montserrat";
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat-Medium.woff-2") format("woff-2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.woff-2") format("woff-2");
-  font-weight: 600;
-  font-style: normal;
-}
-
 body {
   font-family: "Rubik";
   font-size: 1rem;
@@ -169,4 +153,282 @@ body {
   max-width: 1360px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.banner {
+  position: relative;
+  background-color: #F7F8FD;
+  margin-bottom: 17px;
+  border-radius: 16px;
+}
+
+.banner__head {
+  display: flex;
+  padding: 24px 15px 23px;
+  border-bottom: 2px solid #ebecf5;
+}
+
+.banner__order {
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 18px;
+  background: -webkit-linear-gradient(top, #FFC736, #FF630C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 15px;
+}
+
+.banner__name {
+  font-weight: 500;
+  font-size: 18px;
+  color: #313446;
+  margin-left: 10px;
+}
+
+.banner__rating {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 2px;
+}
+
+.banner__rating span {
+  font-weight: 500;
+  font-size: 17px;
+  margin-right: 10px;
+}
+
+.banner__rating img + img {
+  margin-left: 2px;
+}
+
+.banner__body {
+  padding: 11px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px 32px;
+}
+
+.banner__content {
+  display: flex;
+  gap: 18px;
+  max-width: 450px;
+}
+
+.banner__logo {
+  transform: translateY(3px);
+}
+
+.banner__subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  color: #72768D;
+  margin-left: 2px;
+  margin-bottom: 8px;
+}
+
+.banner .icon-present::before {
+  font-size: 17px;
+  background: -webkit-linear-gradient(top, #FFC736, #FF630C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  top: 2px;
+  left: -2px;
+}
+
+.banner__title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.banner__text {
+  font-size: 0.875rem;
+  line-height: 1.4285714286;
+  color: #72768D;
+}
+
+.banner__list {
+  margin-left: -53px;
+}
+
+.banner__list .icon-rocket::before {
+  margin-right: 6px;
+  color: #0079F0;
+  top: 2px;
+  position: relative;
+  font-size: 17px;
+}
+
+.banner__list-item {
+  font-size: 14px;
+  color: #72768D;
+}
+
+.banner__list-item + .banner__list-item {
+  margin-top: 11px;
+}
+
+.banner__payments {
+  transform: translateX(9px);
+}
+
+.banner__media {
+  display: flex;
+  align-items: center;
+  gap: 15px 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 272px;
+  width: 100%;
+  margin-bottom: 21px;
+}
+
+.banner__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.banner__info::before,
+.banner__info::after {
+  position: absolute;
+  content: "";
+  width: 86px;
+  height: 2px;
+  background-color: #A6AAC3;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner__info::before {
+  left: 0;
+}
+
+.banner__info::after {
+  right: 0;
+}
+
+.banner__info span {
+  font-size: 13px;
+  color: #A6AAC3;
+}
+
+.banner__info img {
+  transition: transform 1s ease;
+}
+
+.banner__info img.active {
+  color: #A6AAC3;
+  transform: rotateX(180deg);
+}
+
+.banner__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-basis: 180px;
+}
+
+.banner__btn {
+  font-family: "Rubik";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 19px 0;
+  max-width: 180px;
+  width: 100%;
+}
+
+.banner__btn--claim {
+  color: #fff;
+  background-color: #53AF1B;
+}
+
+.banner__btn--read {
+  color: #72768D;
+  background-color: rgba(235, 236, 245, 0.2862745098);
+}
+
+.banner__details {
+  height: 0px;
+  overflow: hidden;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  background: #F1F3FD;
+  transition: all 0.5s ease;
+}
+
+.banner__details-wrapper {
+  border-top: 1px solid #EBECF5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #72768D;
+  font-size: 0.875rem;
+  line-height: 1.7857142857;
+  padding: 16px 15px;
+  transition: all 0.5s ease;
+}
+
+.banner .icon-like::before,
+.banner .icon-dislike::before {
+  font-size: 25px;
+  position: relative;
+  top: 5px;
+}
+
+.banner .icon-like::before {
+  color: #53AF1B;
+  margin-right: 2px;
+}
+
+.banner .icon-dislike::before {
+  color: #FF4C34;
+  top: 6px;
+  left: -2px;
+}
+
+.banner__details-text {
+  max-width: 446px;
+  width: 100%;
+}
+
+.banner__details-list {
+  border: 2px solid #EBECF5;
+  margin-left: 0;
+  border-radius: 16px;
+  padding: 8px 9px 15px 15px;
+  max-width: 404px;
+  width: 100%;
+}
+
+.banner__ditails-item {
+  font-size: 0.875rem;
+  line-height: 1.7857142857;
+}
+
+.banner__ditails-item + .banner__ditails-item {
+  margin-top: 9px;
+}
+
+.bonus {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.block {
+  height: 1000px;
 }
