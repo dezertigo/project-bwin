@@ -152,13 +152,13 @@ body {
 .container {
   max-width: 1360px;
   padding: 0 20px;
-  margin: 0 auto;
+  margin: 40px auto 0;
 }
 
 .banner {
   position: relative;
   background-color: #F7F8FD;
-  margin-bottom: 17px;
+  margin-bottom: 18px;
   border-radius: 16px;
 }
 
@@ -424,9 +424,46 @@ body {
 
 .bonus {
   position: absolute;
+  width: 220px;
   left: 50%;
   transform: translateX(-50%);
-  top: 0;
+}
+
+.bonus__top {
+  position: absolute;
+  background-color: #3E1C9E;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5px;
+  clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+  width: 213px;
+}
+
+.bonus__top--orange {
+  background-color: #B86326;
+}
+
+.bonus__text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 201px;
+  width: 100%;
+  padding: 12px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/bonus.svg) no-repeat;
+}
+
+.bonus__text--orange {
+  background: url(../img/bonus-orange.svg) no-repeat;
 }
 
 .block {

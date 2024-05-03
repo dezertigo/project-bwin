@@ -1,7 +1,7 @@
 .banner {
     position: relative;
     background-color: $bannerbg;
-    margin-bottom: 17px;
+    margin-bottom: 18px;
     border-radius: 16px;
     &__head {
         display: flex;
@@ -251,28 +251,44 @@
 }
 .bonus {
     position: absolute;
+    width: 220px;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
     &__top {
+        position: absolute;
+        background-color: #3E1C9E;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 5px;
+        clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+        width: 213px;
+        &--orange {
+            background-color: #B86326;
+        }
     }
 
     &__text {
-    }
-
-    &__bot {
+        font-size: 14px;
+        font-weight: 500;
+        color: $light;
+        position: relative;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 201px;
+        width: 100%;
+        padding: 12px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(../img/bonus.svg) no-repeat;
+        &--orange {
+            background:url(../img/bonus-orange.svg) no-repeat ;
+        }
     }
 }
 .block {
     height: 1000px;
-}
-.logo {
-}
-.icon-rocket {
-}
-.payments {
-}
-.icon-like {
-}
-.icon-dislike {
 }
