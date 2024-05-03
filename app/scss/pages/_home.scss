@@ -41,7 +41,9 @@
         }
     }
     &__fire {
-        width: 17px;
+        @media (max-width: $breakpoint993) {
+            width: 17px;
+        }
     }
     &__name {
         font-weight: 500;
@@ -412,7 +414,9 @@
         &--claim {
             color: #fff;
             background-color: #53AF1B;
-            order: 1;
+            @media (max-width: $breakpoint993) {
+                order: 1;
+            }
         }
         &--read {
             color: $text;
@@ -513,9 +517,14 @@
         @media (max-width: $breakpoint425) {
             padding: 4px 8px 12px;
         }
-        +.banner__details-list {
-            margin-top: -4px;
-            padding-left: 10px;
+        // +.banner__details-list {
+        //     margin-top: -4px;
+        //     padding-left: 10px;
+        // }
+        &:nth-child(2) {
+            @media (max-width: $breakpoint768) {
+            padding: 3px 10px;
+            }
         }
     }
 
@@ -525,10 +534,10 @@
             @include fl(12, 14);
         }
         +.banner__ditails-item {
-            margin-top: 9px;
-            @media (max-width: $breakpoint993) {
-                margin-top: 8px;
-            }
+            margin-top: 8px;
+            // @media (max-width: $breakpoint993) {
+            //     margin-top: 8px;
+            // }
         }
     }
 }

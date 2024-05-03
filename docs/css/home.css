@@ -178,10 +178,6 @@ body {
   margin-right: 15px;
 }
 
-.banner__fire {
-  width: 17px;
-}
-
 .banner__name {
   font-weight: 500;
   font-size: 18px;
@@ -362,7 +358,6 @@ body {
 .banner__btn--claim {
   color: #fff;
   background-color: #53AF1B;
-  order: 1;
 }
 
 .banner__btn--read {
@@ -427,18 +422,13 @@ body {
   width: 100%;
 }
 
-.banner__details-list + .banner__details-list {
-  margin-top: -4px;
-  padding-left: 10px;
-}
-
 .banner__ditails-item {
   font-size: 0.875rem;
   line-height: 1.7857142857;
 }
 
 .banner__ditails-item + .banner__ditails-item {
-  margin-top: 9px;
+  margin-top: 8px;
 }
 
 .bonus {
@@ -529,6 +519,10 @@ body {
 }
 
 @media (max-width: 993px) {
+  .banner__fire {
+    width: 17px;
+  }
+
   .banner__rating img:not(:first-of-type) {
     display: none;
   }
@@ -614,6 +608,10 @@ body {
     margin-bottom: 16px;
   }
 
+  .banner__btn--claim {
+    order: 1;
+  }
+
   .banner__details-wrapper {
     flex-direction: column;
     align-items: flex-start;
@@ -649,10 +647,6 @@ body {
   .banner__ditails-item {
     font-size: 0.75rem;
     line-height: 1.1666666667;
-  }
-
-  .banner__ditails-item + .banner__ditails-item {
-    margin-top: 8px;
   }
 }
 
@@ -732,6 +726,10 @@ body {
     font-size: 12px;
     max-width: 189px;
     padding: 14px 0;
+  }
+
+  .banner__details-list:nth-child(2) {
+    padding: 3px 10px;
   }
 
   .bonus {
