@@ -728,7 +728,7 @@ body {
     padding: 14px 0;
   }
 
-  .banner__details-list:nth-child(2) {
+  .banner__details-list + .banner__details-list {
     padding: 3px 10px;
   }
 
@@ -761,6 +761,10 @@ body {
 }
 
 @media (max-width: 425px) {
+  .banner {
+    margin-bottom: 10px;
+  }
+
   .banner:nth-child(2) {
     margin-bottom: 5px;
   }
@@ -862,7 +866,7 @@ body {
     max-width: 130px;
     background-size: 130px 33px;
     font-size: 10px;
-    padding-top: 9px;
+    padding-top: 12px;
     top: -8px;
   }
 }

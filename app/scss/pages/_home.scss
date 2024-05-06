@@ -7,6 +7,7 @@
         margin-bottom: 9px;
     }
     @media (max-width: $breakpoint425) {
+        margin-bottom: 10px;
         &:nth-child(2) {
             margin-bottom: 5px;
         }
@@ -514,17 +515,13 @@
             border-radius: 10px;
             max-width: 100%;
         }
-        @media (max-width: $breakpoint425) {
-            padding: 4px 8px 12px;
-        }
-        // +.banner__details-list {
-        //     margin-top: -4px;
-        //     padding-left: 10px;
-        // }
-        &:nth-child(2) {
-            @media (max-width: $breakpoint768) {
+        @media (max-width: $breakpoint768) {
+            +.banner__details-list {
             padding: 3px 10px;
             }
+        }
+        @media (max-width: $breakpoint425) {
+            padding: 4px 8px 12px;
         }
     }
 
@@ -602,7 +599,7 @@
             max-width: 130px;
             background-size: 130px 33px;
             font-size: 10px;
-            padding-top: 9px;
+            padding-top: 12px;
             top: -8px;
         }
         &--orange {
